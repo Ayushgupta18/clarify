@@ -8,7 +8,7 @@ class AnswerBox extends Component{
     }
    }
    componentDidMount(){
-    fetch(`http://localhost:8080/feed-question/?question_id=${this.props.question_id}`, {
+    fetch(`https://clarify-api.herokuapp.com/feed-question/?question_id=${this.props.question_id}`, {
     method: 'get',
     headers: {'Content-Type': 'application/json'}
   })

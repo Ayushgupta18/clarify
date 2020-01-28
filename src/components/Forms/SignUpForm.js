@@ -25,7 +25,7 @@ class SignUpForm extends Component {
     handleSubmit = (e)=> {
       e.preventDefault();
       console.log(this.state);
-    fetch('http://localhost:8080/register', {
+    fetch('https://clarify-api.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify({

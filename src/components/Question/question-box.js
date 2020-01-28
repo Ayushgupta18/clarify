@@ -20,7 +20,7 @@ class QuestionBox extends Component{
     }
     handleSubmit = () => {
       console.log(this.state);
-    fetch('http://localhost:8080/add-answer', {
+    fetch('https://clarify-api.herokuapp.com/add-answer', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify({

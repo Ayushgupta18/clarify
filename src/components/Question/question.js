@@ -11,7 +11,7 @@ class Questionlis extends Component{
         };
   }
   componentDidMount(){
-  fetch('http://localhost:8080/question', {
+  fetch('https://clarify-api.herokuapp.com/question', {
     method: 'get',
     headers: {'Content-Type': 'application/json'}
   })

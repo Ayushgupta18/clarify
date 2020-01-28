@@ -9,7 +9,7 @@ class Answerlis extends Component{
         };
   }
   componentDidMount(){
-  fetch('http://localhost:8080/answer', {
+  fetch('https://clarify-api.herokuapp.com/answer', {
     method: 'get',
     headers: {'Content-Type': 'application/json'}
   })

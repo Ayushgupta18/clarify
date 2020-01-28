@@ -22,7 +22,7 @@ class SignInForm extends Component {
 
     handleSubmit = (e)=>{
     e.preventDefault();
-    fetch('http://localhost:8080/signin',
+    fetch(' https://clarify-api.herokuapp.com/signin',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
