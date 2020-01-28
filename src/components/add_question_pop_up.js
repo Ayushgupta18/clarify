@@ -22,7 +22,7 @@ constructor(props) {
     handleSubmit(e) {
       e.preventDefault();
       console.log(this.state);
-      fetch('http://localhost:8080/add-question', {
+      fetch('https://clarify-api.herokuapp.com/add-question', {
         method: 'post',
         headers: {'Content-Type': 'application/json',
                   'auth':`JWT ${localStorage.getItem('token')}`
