@@ -18,7 +18,7 @@ class QuestionBox extends Component{
           [name]: value
         });
     }
-    handleSubmit = () => {
+    handleSubmit = (e) => {
       e.preventDefault();
       console.log(this.state);
     fetch('https://clarify-api.herokuapp.com/add-answer', {
