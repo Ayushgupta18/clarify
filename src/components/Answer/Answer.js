@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import './answer.css';
 import AnswerBox from './Answer_box_container';
 
 class Answerlis extends Component{
@@ -20,7 +21,8 @@ class Answerlis extends Component{
 	render() {
 		const { ans } = this.state;
 		return(
-    		<div>
+    		<div className="answer">
+          <br/>
     			{ans.map(current_obj =>
               <AnswerBox key={current_obj.id} answer_text={current_obj.answer_text} user_id={current_obj.user_id} question_id={current_obj.question_id}/>
               )}

@@ -39,7 +39,7 @@ class QuestionBox extends Component{
         <h4>{this.props.title}</h4>
     		<form onSubmit={this.handleSubmit}>
                 {/*<textarea name="Answer" value={this.state.Answer} onChange={this.handleChange}/>*/}
-                <div class="form-group">
+                <div className="form-group">
                   <label for="comment">Your valuable answer here:</label>
                   <textarea className="form-control" rows="5" id="comment" name="Answer" value={this.state.Answer} onChange={this.handleChange}/>
                 </div> 

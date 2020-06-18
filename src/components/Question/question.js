@@ -23,16 +23,12 @@ class Questionlis extends Component{
 		const { ques } = this.state;
     console.log(ques);
 		return(
-      <div>
-      <div className="flex-container">
     		<div className="question">
             <br/>
     			{ques.map(current_obj =>
               <QuestionBox key={current_obj.id} title={current_obj.title} user_id={current_obj.user_id} question_id={current_obj.id}/>
               )}
     		</div>
-        </div>
-        </div>
 			);
 	}
 }
