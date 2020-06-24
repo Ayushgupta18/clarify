@@ -1,11 +1,10 @@
 import React from 'react';
 import Logo from '../logo/logo.js'
 import {Link} from 'react-router-dom';
-import {history} from '../history'
-const Header = ()=>{
+const Header = (props)=>{
   const handleClick=()=>{
     localStorage.removeItem('token')
-    history.replace('/sign/in')
+    props.history.replace('/sign/in')
   }
 	return(
 		<nav className="navbar navbar-expand-lg navbar-dark text-light shadow bg-dark fixed-top">

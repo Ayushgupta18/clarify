@@ -17,7 +17,6 @@ class MainContent extends Component{
     });
   }
 	render(){
-		console.log(this.props)
 		return(
 			<div>
 				<div className="flex-container">
