@@ -1,12 +1,13 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './home.css'
 import Header from '../../components/Header/Navbar';
 import MainContent from '../../components/Main_body/MainContent';
 import AppContext from "../../store/index.js";
+import {Redirect} from 'react-router-dom'
 
 const Home= ()=>{
        const [{user}]=React.useContext(AppContext);
-       if(user==null)
+       if(user!=null)
        {
               return(
                      <>
@@ -18,7 +19,7 @@ const Home= ()=>{
        else{
               return(
                      <>
-                            Nothing found in local storage
+                           <Redirect to="/sign" />
                      </>
               )
        }
