@@ -37,7 +37,7 @@ class MainContent extends Component{
 				</div>
 				<div className="main">
 					
-					<div className="card bg-dark text-white">
+					<div className="bg-dark text-white">
 						<div className="card-body">
 						<p>Click here to add a question</p>
 						<button onClick={this.togglePopup.bind(this)}>Add Question</button>

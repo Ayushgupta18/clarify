@@ -5,9 +5,10 @@ import MainContent from '../../components/Main_body/MainContent';
 import AppContext from "../../store/index.js";
 import {Redirect} from 'react-router-dom'
 
+
 const Home= ()=>{
        const [{user}]=React.useContext(AppContext);
-       if(user!=null)
+       if(user==null)
        {
               return(
                      <>

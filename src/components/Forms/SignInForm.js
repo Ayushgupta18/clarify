@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class SignInForm extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -34,13 +35,12 @@ class SignInForm extends Component {
         .then((data)=>{
           console.log(data)
           localStorage.setItem('token',data.token)
-          console.log('aaaacgvhv')
           this.props.history.replace('/')
         })
-        
     }
-
+    
     render() {
+      console.log(this.props)
         return (
         <div className="FormCenter">
             <form onSubmit={this.handleSubmit} className="FormFields">

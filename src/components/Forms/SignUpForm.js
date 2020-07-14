@@ -24,7 +24,6 @@ class SignUpForm extends Component {
 
     handleSubmit = (e)=> {
       e.preventDefault();
-      console.log(this.state);
     fetch('https://clarify-api.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
@@ -38,7 +37,6 @@ class SignUpForm extends Component {
   }
 
     render() {
-      console.log(this.state)
         return (
         <div className="FormCenter">
             <form onSubmit={this.handleSubmit} className="FormFields">

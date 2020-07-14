@@ -7,7 +7,6 @@ import { reducer } from "./store/index";
 
 export default function App() {
   const [state, dispatch] = React.useReducer(reducer, {user:null});
-  console.log(state)
   return (
     <>
       <Switch>
