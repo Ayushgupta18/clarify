@@ -24,7 +24,7 @@ class SignUpForm extends Component {
 
     handleSubmit = (e)=> {
       e.preventDefault();
-    fetch('https://clarify-api.herokuapp.com/register', {
+      fetch('https://clarify-api.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify({
@@ -33,7 +33,13 @@ class SignUpForm extends Component {
         name: this.state.name
       })
     })
-      .then(this.props.history.push("/sign/in"));
+      .then((res)=>{
+        console.log(res.json())
+        return res.json();
+      })
+      .then((data)=>{
+        this.props.history.push("/sign/in")
+      });
   }
 
     render() {

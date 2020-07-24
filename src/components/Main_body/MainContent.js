@@ -50,9 +50,10 @@ class MainContent extends Component{
 			          : null
 			        }
 			        <br/>
+					
 			        <Switch>
 			        <Route path={this.props.match.url+"question"} component={Questionlis}/>
-			        <Route path='/answer' component={Answer}/>
+			        <Route path='/' component={Answer}/>
 			        </Switch>
 				</div>
 				

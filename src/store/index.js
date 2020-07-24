@@ -4,6 +4,7 @@ import React from "react";
 export const reducer = (state, { type, payload }) => {
     switch (type) {
         case "SET_LOGIN":
+          if(payload!==undefined)
             localStorage.setItem('token',payload)
           return { ...state, user:localStorage.getItem('token')};
         case "LOGOUT":

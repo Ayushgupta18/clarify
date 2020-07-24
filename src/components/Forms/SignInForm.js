@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../../store/index'
 
@@ -20,16 +20,21 @@ function SignInForm(props) {
         body: JSON.stringify({ email:form.email, password:form.password })
       })
         .then((res)=>{
+          console.log(res)
           return res.json();
         })
         .then((data)=>{
-          console.log(data)
-          dispatch({type:"SET_LOGIN",payload:data.token}); 
-          props.history.replace('/')
+          if(data.message){
+            alert(data.message)
+          }
+          else{
+            dispatch({type:"SET_LOGIN",payload:data.token}); 
+            props.history.replace('/')
+          }
+          
         })
     }
-    
-      console.log(props)
+
         return (
         user==null?
         <div className="FormCenter">
