@@ -8,7 +8,7 @@ import {Redirect} from 'react-router-dom'
 
 const Home= ()=>{
        const [{user}]=React.useContext(AppContext);
-       if(user==null)
+       if(user!=null)
        {
               return(
                      <>
@@ -20,7 +20,7 @@ const Home= ()=>{
        else{
               return(
                      <>
-                           <Redirect to="/sign" />
+                           <Redirect to="/sign/in" />
                      </>
               )
        }

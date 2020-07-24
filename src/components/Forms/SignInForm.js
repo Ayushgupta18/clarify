@@ -1,66 +1,56 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AppContext from '../../store/index'
 
-class SignInForm extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: ''
-        };
-    }
+function SignInForm(props) {
+  const [form, setform] = React.useState({ email: "", password: "" });
+  const [{user},dispatch]=React.useContext(AppContext);
+  
+  function handleChange(e) {
+    setform({ ...form, [e.target.name]: e.target.value });
+  }
 
-    handleChange=(e)=>{
-        let target = e.target;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
-        let name = target.name;
 
-        this.setState({
-          [name]: value
-        });
-    }
-
-    handleSubmit = (e)=>{
+   const handleSubmit = (e)=>{
     e.preventDefault();
     fetch(' https://clarify-api.herokuapp.com/signin',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email:this.state.email, password:this.state.password })
+        body: JSON.stringify({ email:form.email, password:form.password })
       })
         .then((res)=>{
           return res.json();
         })
         .then((data)=>{
           console.log(data)
-          localStorage.setItem('token',data.token)
-          this.props.history.replace('/')
+          dispatch({type:"SET_LOGIN",payload:data.token}); 
+          props.history.replace('/')
         })
     }
     
-    render() {
-      console.log(this.props)
+      console.log(props)
         return (
+        user==null?
         <div className="FormCenter">
-            <form onSubmit={this.handleSubmit} className="FormFields">
+            <form onSubmit={handleSubmit} className="FormFields">
             <div className="FormField">
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
-                <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
+                <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={form.email} onChange={handleChange} />
               </div>
 
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="password">Password</label>
-                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={form.password} onChange={handleChange} />
               </div>
 
               <div className="FormField">
                   <button className="FormField__Button mr-20">Sign In</button> <Link to="/" className="FormField__Link">Create an account</Link>
               </div>
             </form>
-          </div>
+        </div>
+        :props.history.replace('/')
         );
-    }
 }
 
 export default SignInForm;

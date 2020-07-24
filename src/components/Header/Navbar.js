@@ -1,10 +1,13 @@
 import React from 'react';
 import Logo from '../logo/logo.js'
 import {Link} from 'react-router-dom';
+import AppContext from '../../store/index'
 const Header = (props)=>{
+
+  const [,dispatch]=React.useContext(AppContext);
+
   const handleClick=()=>{
-    localStorage.removeItem('token')
-    props.history.replace('/sign/in')
+    dispatch({type:"LOGOUT",payload:null}); 
   }
 	return(
 		<nav className="navbar navbar-expand-lg navbar-dark text-light shadow bg-dark fixed-top">
@@ -26,7 +29,7 @@ const Header = (props)=>{
           <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button onClick={handleClick} className="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            <button onClick={()=>handleClick()} className="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
           </form>
         </div>
       </nav>
