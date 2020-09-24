@@ -10,6 +10,7 @@ const Header = (props)=>{
     dispatch({type:"LOGOUT",payload:null}); 
   }
 	return(
+    <>
 		<nav className="navbar navbar-expand-lg navbar-dark text-light shadow bg-dark fixed-top">
         <Link className="navbar-brand" to="/"><Logo/></Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +34,10 @@ const Header = (props)=>{
           </form>
         </div>
       </nav>
+      <br/>
+      <br/>
+      <br/>
+      </>
 		);
 }
 

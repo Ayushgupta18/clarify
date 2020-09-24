@@ -36,8 +36,7 @@ constructor(props) {
 
   render() {
     return (
-      <div className='popup'>
-        <div className='popup_inner'>
+      <div classname="popup" >
             {/*<form onSubmit={this.handleSubmit}>
               <textarea name="question" value={this.state.question} onChange={this.handleChange}/>
               <button type="submit"> Add Question </button>
@@ -60,7 +59,6 @@ constructor(props) {
               </form>
               </div>
             </div>
-        </div>
       </div>
     );
   }

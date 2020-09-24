@@ -34,11 +34,13 @@ class SignUpForm extends Component {
       })
     })
       .then((res)=>{
-        console.log(res.json())
-        return res.json();
+        return res.text();
       })
       .then((data)=>{
-        this.props.history.push("/sign/in")
+        if(data=="registered")
+          this.props.history.push("/sign/in")
+        else
+          alert("unable to registered")
       });
   }
 
