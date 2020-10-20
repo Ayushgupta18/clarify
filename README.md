@@ -6,6 +6,7 @@
 
 ![Screenshot from 2020-09-17 14-30-53](https://user-images.githubusercontent.com/60380782/94130555-73c55980-fe7a-11ea-96eb-b623b51e3714.png)
 
+Live Demo: https://clarify1.herokuapp.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
